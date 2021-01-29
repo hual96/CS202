@@ -1,0 +1,140 @@
+/*
+Style Sheet for Justice Banson
+* version: 4.2
+* last modified: 7.8.2020
+* author: Justice Banson
+* email: justice@justicebanson.com;
+* website: Lesson 6.
+ */
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../node_modules/@fortawesome/fontawesome-free/scss/regular.scss";
+/* google font */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+//variables
+
+$color-1: #22bbd4;
+$color-2: #2c6e78;
+$text-color: #fff;
+
+* {
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Nunito';
+}
+.box {
+    font-weight: bold;
+    padding: 0.8em;
+    color: #fff;
+    border: 1px solid $text-color;
+}
+.color-1 {
+    background: $color-1;
+}
+.color-2 {
+    background: $color-2;
+}
+
+// grid
+
+.grid{
+    display:grid;
+    // grid-templates
+
+        // px, not as responsive to screen size
+    // grid-template-columns: 200px 400px 200px;
+
+    // percentage, always responsive to screen size
+    grid-template-columns: 30% 40% 30%;
+
+    // gap - space between the elements
+    // column-gap: 1rem;
+    // row-gap: 1rem;
+    // gap shorthand
+    // grid-gap: 1rem;
+
+    // fractional unit - fr - fraction of available space, more responsive than %
+    // grid-template-columns: 1fr 1fr 1fr;
+
+    // repeat()
+    grid-template-columns: repeat(3, 1fr); 
+    // repeating 1fr three times
+
+    // grid-template-columns: 1fr 200px 1fr;
+
+    // minmax
+
+    // grid-template-columns: 1fr minmax(100px, 200px), 1fr;
+
+    // repeat and minmax
+    // grid-template-columns: repeat(3, minmax(100px,1fr));
+
+    // auto-fill or auto-fit
+    // grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+
+    grid-template-rows: 100px;
+
+    // auto, takes the default width but adjust based on amount of content
+    // grid-auto-rows: auto;
+}
+
+// line placement or grid-columns
+// .header{
+//     // grid-column-start: 1;
+//     // grid-column-end: 3;
+
+//     // grid-row-start: 1;
+//     // grid-row-end: 2;
+
+//     // shorthand
+//     grid-column: 1/3;
+//     grid-row: 1/2;
+// }
+
+// .nav{
+//     grid-column: 3/4;
+//     grid-row:1/3;
+
+// }
+
+// .footer{
+//     grid-column:2/4;
+// }
+
+// grid-template-areas
+
+.grid{
+    grid-template-areas:
+    "header header header"
+    "nav main main"
+    "nav main main"
+    "aside aside section"
+    "aside aside section"
+    "footer footer footer";
+}
+
+.header{
+    grid-area: header;
+}
+
+.nav{
+    grid-area: nav;
+}
+
+.main{
+    grid-area: main;
+}
+
+.aside{
+    grid-area: aside;
+}
+
+.section{
+    grid-area: section;
+}
+
+.footer{
+    grid-area: footer;
+}
